@@ -209,12 +209,12 @@ VALUES
     ('Jack Harkness', 38, '6-8-2008');
 
 INSERT INTO
-    specializations
+    specializations (vet_id, species_id)
 VALUES
     (1, 1),
-(3, 1),
-(3, 2),
-(4, 2);
+    (3, 1),
+    (3, 2),
+    (4, 2);
 
 INSERT INTO
     visits (animal_id, vet_id, date_of_visit)
@@ -228,6 +228,7 @@ VALUES
     (4, 3, '5-4-2021'),
     (5, 4, '2-24-2021'),
     (6, 2, '12-21-2019'),
+    (6, 1, '8-10-2020'),
     (6, 2, '4-7-2021'),
     (7, 3, '9-29-2019'),
     (8, 4, '10-3-2020'),
