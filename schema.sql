@@ -85,3 +85,7 @@ ALTER TABLE
 
 -- Create index to improve performance
 CREATE INDEX idx_visits_animal_id ON visits(animal_id);
+
+CREATE INDEX idx_visits_vet_id ON visits(vet_id);
+
+CREATE INDEX idx_owners_emails ON owners(email);
