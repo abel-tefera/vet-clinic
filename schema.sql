@@ -74,3 +74,14 @@ CREATE TABLE visits (
 	CONSTRAINT fk_vets_visit FOREIGN key(vet_id) REFERENCES vets(id),
 	PRIMARY KEY(animal_id, vet_id, date_of_visit)
 );
+
+ALTER TABLE
+	owners
+ADD
+	COLUMN email VARCHAR(120);
+
+ALTER TABLE
+	visits DROP CONSTRAINT visits_pkey;
+
+-- Create index to improve performance
+CREATE INDEX idx_visits_animal_id ON visits(animal_id);
