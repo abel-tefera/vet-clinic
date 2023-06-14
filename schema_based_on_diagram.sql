@@ -53,3 +53,8 @@ CREATE TABLE invoice_items(
     CONSTRAINT fk_treatment_id FOREIGN KEY (treatment_id) REFERENCES treatments(id),
     PRIMARY KEY (id)
 );
+
+CREATE INDEX idx_patient_id ON patients(id);
+CREATE INDEX idx_medical_history_treatment ON medical_histories_treatments (medical_history_id, treatment_id);
+CREATE INDEX idx_invoice_medical_history ON invoices(medical_history_id);
+CREATE INDEX idx_invoice_item_invoice ON invoice_items(invoice_id, treatment_id);
